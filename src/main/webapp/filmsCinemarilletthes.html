@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<script type="text/javascript"
+	src="js/webServiceListeFilmsRilletthes.js"></script>
+<link rel="stylesheet" href="css/films.css">
+<link rel="stylesheet" href="css/menuclient.css">
+</head>
+
+<body onload="charger_films()">
+
+	 <div class="header" id="entete">
+		<img src="img/index.png" alt="logo cinema" height="60"><!--  <a
+			class="menu" href="#table" id="test1">Liste des films</a> <a
+			class="menu" href="#formulaireFilm">Formulaire film</a> <span>FR</span>
+		<div class="user_infos">
+			<img class="user_avatar" src="img/avatar.jpg"
+				alt="avatar utilisateur" height="60">
+			    <div class="user_options">
+                <a class="menu" href="">Mon compte</a>
+                <a class="menu" href="">Connexion</a>
+            </div>
+		</div> -->
+	</div> 
+	<div class="content">
+		<div id="formulaireFilm">
+			<input type='button' value="Ré-initailiser"
+				onclick="initialiser_film()" />
+			<fieldset>
+				<legend>Informations sur le film</legend>
+				<div class="info">
+					<div>
+						Titre du film : <input type="text" id="film_titre"
+							placeholder="titre du film" />
+					</div>
+					<div>
+						Synopsis :
+						<textarea cols='33' rows='5' id="film_description"
+							placeholder="Synopsis"></textarea>
+					</div>
+					<div>
+						Affiche : <input type="text" id="film_affiche"
+							placeholder="lien Affiche">
+					</div>
+					<div>
+						Duree : <input type="text" id="film_duree"
+							placeholder="Duree en min">
+					</div>
+					<div>
+						Age Minimum : <input type="text" id="film_ageMinimum"
+							placeholder="age minimum">
+					</div>
+					<div>
+						<input type='button' value="Créer" onclick="ajouter_film()"
+							id="btn_valider" />
+					</div>
+				</div>
+			</fieldset>
+		</div>
+		<br> <br>
+
+		<h2 id="touslesfilms">Tous les films des cinémas Rilletthes</h2>
+		<div id="table">
+
+			<div>
+				<div class="tr">
+					<div class="th">Edit</div>
+					<div class="th">Titre</div>
+					<div class="th">Affiche</div>
+					<div class="th">Synopsis</div>
+					<div class="th">Duree</div>
+					<div class="th">Age Minimum</div>
+
+
+					<div class="th">Supprimer</div>
+				</div>
+			</div>
+			<div>
+				<div id="container_film"></div>
+			</div>
+		</div>
+
+
+		<template id="template_film">
+			<div class="tr">
+				<div class="td">
+					<!-- <input type="button" value="Edit" id="btn_edit"> -->
+					<input type="image" src="img/modifier.jpg" value="Edit"
+						id="btn_edit" width="50">
+				</div>
+				<div class="td">
+					<p id="t_titre_film"></p>
+				</div>
+				<div class="td">
+					<img src="" id="t_affiche_film" width="200" height="300">
+				</div>
+				<div class="td">
+					<p id="t_synopsis_film"></p>
+				</div>
+				<div class="td">
+					<p id="t_duree_film"></p>
+				</div>
+				<div class="td">
+					<p id="t_ageMinimum_film"></p>
+				</div>
+
+				<div class="td">
+					<!-- <input type="button" value="Supprimer" id="btn_supprimer"> -->
+					<input type="image" src="img/croix.jpg" value="Supprimer"
+						id="btn_supprimer" width="50">
+				</div>
+			</div>
+
+		</template>
+	</div>
+</body>
+
+</html>

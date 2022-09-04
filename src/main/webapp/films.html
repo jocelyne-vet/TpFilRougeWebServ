@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<script type="text/javascript" src="js/webServiceListeFilms.js"></script>
+<link rel="stylesheet" href="css/films.css">
+</head>
+
+<body onload="charger_films()">
+    
+    
+    <div>
+    <fieldset>
+    	<legend>Créer un film</legend>
+		<input type="text" id="film_titre" placeholder="titre du film"/>
+		<textarea cols='15' rows='2' id="film_description" placeholder="Synopsis"></textarea>
+		<input type="text" id="film_affiche" placeholder="lien Affiche">
+		<input type="text" id="film_duree" placeholder="Duree en min">
+		<input type="text" id="film_ageMinimum" placeholder="age minimum">
+		<input type='button' value="Ajouter le film" onclick="ajouter_film()"/>
+	</fieldset>	
+	</div>
+    <br>
+    <br>
+    
+    <h2>Tous les films des cinémas Rilletthes</h2>
+	<div id="table">
+	
+		<div>
+			<div class="tr">
+				<div class="th">Titre</div>
+				<div class="th">Affiche</div>
+				<div class="th">Synopsis</div>
+				<div class="th">Duree</div>
+				<div class="th">Age Minimum</div>
+				<div class="th">Modifier</div>
+
+				<div class="th">Supprimer</div>
+			</div>
+		</div>
+		<div>
+		<div id="container_film"></div>
+		</div>
+	</div>
+	
+
+	<template id="template_film">
+		<div class="tr">
+			<div class="td">
+				<input type="text" name="" id="t_titre_film">
+			</div>
+			<div class="td">
+				<input type="url" name="" id="t_affiche_film">
+			</div>
+			<div class="td">
+				<textarea name="" id="t_synopsis_film" cols="20" rows="10"></textarea>
+			</div>
+			<div class="td">
+				<input type="text" name="" id="t_duree_film">
+			</div>
+			<div class="td">
+				<input type="text" name="" id="t_ageMinimum_film">
+			</div>
+			<div class="td">
+				<input type="button" value="Modifier" id="btn_modifier">
+			</div>
+			<div class="td">
+				<input type="button" value="Supprimer" id="btn_supprimer">
+			</div>
+		</div>
+
+	</template>
+
+</body>
+
+</html>
